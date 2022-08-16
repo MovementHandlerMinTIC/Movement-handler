@@ -1,7 +1,7 @@
 Integrantes y roles del grupo "Mh - Movement handler"
 
 Gabriela Chavez Aguilera --> Scrum master.
-Integrante 2 --> Rol.
+Jaime Sánchez Mejía --> Analista
 Integrante 3 --> Rol.
 Integrante 4 --> Rol.
 Integrante 5 --> Rol.
