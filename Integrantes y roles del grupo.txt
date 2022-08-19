@@ -4,4 +4,4 @@ Gabriela Chavez Aguilera --> Scrum master.
 Jaime Sánchez Mejía --> Analista
 Hernán Támara --> Administrador BD.
 Daniel Hilarion Galindez--> Producto owner
-Integrante 5 --> Rol.
+David Felipe Patiño Ruiz --> Desarrollador.
