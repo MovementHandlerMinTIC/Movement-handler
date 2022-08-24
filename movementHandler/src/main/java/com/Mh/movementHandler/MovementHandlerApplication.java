@@ -9,5 +9,6 @@ public class MovementHandlerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MovementHandlerApplication.class, args);
 	}
+		Empleado empleado1= new Empleado("Juan Perez", "juanperez@gmail.com", "Coca Cola", "Operativo");
 
 }
