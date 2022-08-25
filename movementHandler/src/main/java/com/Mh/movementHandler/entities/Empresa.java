@@ -8,6 +8,9 @@ public class Empresa {
         this.nitEmpresa = nitEmpresa;
     }
 
+    public Empresa() {
+    }
+
     public String getNombreEmpresa() {
         return nombreEmpresa;
     }
