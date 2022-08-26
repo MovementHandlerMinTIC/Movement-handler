@@ -1,10 +1,10 @@
-package com.Mh.movementHandler;
+package com.MovementHandler.Mh;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MovementHandlerApplicationTests {
+class MhApplicationTests {
 
 	@Test
 	void contextLoads() {

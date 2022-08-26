@@ -1,3 +1,4 @@
+package com.MovementHandler.Mh.entities;
 public class Empleado {
     private String nombreEmpleado, correoEmpleado, empresaEmpleado, rolEmpleado;
 

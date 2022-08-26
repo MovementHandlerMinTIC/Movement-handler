@@ -8,25 +8,18 @@
 		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.Mh</groupId>
-	<artifactId>movementHandler</artifactId>
+	<groupId>com.MovementHandler</groupId>
+	<artifactId>Mh</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>movementHandler</name>
-	<description>Proyecto Spring Boot Movement handler</description>
+	<name>Mh</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.24</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
 		<dependency>

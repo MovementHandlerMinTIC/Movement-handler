@@ -1,16 +1,4 @@
-package com.Mh.movementHandler.entities;
-
-
-//import lombok.AllArgsConstructor;
-//import lombok.Getter;
-//import lombok.Setter;
-//import lombok.ToString;
-//
-//@Getter
-//@Setter
-//@ToString
-//@AllArgsConstructor
-
+package com.MovementHandler.Mh.entities;
 public class    MovimientodeDinero {
     private double montoMovimiento; 
     private String conceptoMovimiento, usuarioEncargado;

@@ -1,3 +1,4 @@
+package com.MovementHandler.Mh.entities;
 public class Empresa {
     private String nombreEmpresa, direccionEmpresa, telefonoEmpresa, nitEmpresa;
 
