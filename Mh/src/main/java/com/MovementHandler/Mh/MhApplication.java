@@ -11,6 +11,7 @@ public class MhApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MhApplication.class, args);
+		System.out.println("\n******EMPLEADO******");
 		Empleado empleado1 = new Empleado("Juan Perez", "juanperez@gmail.com", "Coca Cola", "Operativo");
 		System.out.println("Nombre empleado: "+ empleado1.getNombreEmpleado());
 		empleado1.setNombreEmpleado("Laura Amaya");
@@ -25,9 +26,10 @@ public class MhApplication {
 		empleado1.setRolEmpleado("Administrador");
 		System.out.println("Rol empleado: "+ empleado1.getRolEmpleado());
 
+		System.out.println("\n******EMPRESA******");
 		Empresa empresa1 = new Empresa("Coca Cola", "cra. 42a #93-03", "309 4574", "10000335-4");
 		System.out.println("Nombre empresa: "+ empresa1.getNombreEmpresa());
-		empresa1.setNombreEmpresa("Coca-Cola");
+		empresa1.setNombreEmpresa("Pepsi");
 		System.out.println("Nombre empresa: "+ empresa1.getNombreEmpresa());
 		System.out.println("Dirección empresa: "+ empresa1.getDireccionEmpresa());
 		empresa1.setDireccionEmpresa("kra. 42a #93-03");
@@ -39,6 +41,7 @@ public class MhApplication {
 		empresa1.setNitEmpresa("10056794-5");
 		System.out.println("NIT: "+ empresa1.getNitEmpresa());
 
+		System.out.println("\n******MONTO DE DINERO******");
 		MovimientodeDinero mov1= new MovimientodeDinero(10.000, "Venta de cuaderno", "Carolina Rojas");
 		System.out.println("Monto del movimiento: "+ mov1.getMontoMovimiento());
 		mov1.setMontoMovimiento(-10.0);
