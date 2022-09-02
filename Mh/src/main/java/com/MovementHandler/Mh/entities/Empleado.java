@@ -1,15 +1,26 @@
 package com.MovementHandler.Mh.entities;
 public class Empleado {
     private String nombreEmpleado, correoEmpleado, empresaEmpleado, rolEmpleado;
+    private  long idEmpleado;
 
-    public Empleado(String nombreEmpleado, String correoEmpleado, String empresaEmpleado, String rolEmpleado){
+    public Empleado(long idEmpleado,String nombreEmpleado, String correoEmpleado, String empresaEmpleado, String rolEmpleado){
+        this.idEmpleado = idEmpleado;
         this.nombreEmpleado=nombreEmpleado;
         this.correoEmpleado=correoEmpleado;
         this.empresaEmpleado=empresaEmpleado;
         this.rolEmpleado=rolEmpleado;
+
     }
 
     public Empleado() {
+    }
+
+    public long getIdEmpleado() {
+        return idEmpleado;
+    }
+
+    public void setIdEmpleado(long idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
     public String getNombreEmpleado() {
