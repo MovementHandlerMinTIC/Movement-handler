@@ -29,7 +29,7 @@ public class MhApplication {
 		Empleado empleado1 = new Empleado(1, "juan@gmail.com", perfil1, Enum_Roles.Admin, empresa1, movi1, "abril", "mayo", "Juan Perez");
 		Empleado empleado2 = new Empleado(2, "maria@gmail.com", perfil2, Enum_Roles.Admin, empresa2, movi1, "abril", "mayo", "Maria Perez");
 		Empleado empleado3 = new Empleado(3, "carlos@gmail.com", perfil3, Enum_Roles.Operario, empresa2, movi2, "abril", "mayo", "Carlos Lomen");
-		
+
 	}
 
 }
