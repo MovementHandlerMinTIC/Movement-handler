@@ -17,7 +17,7 @@ public class Empleado {
     @Column(name = "perfil")
     private Perfil perfilEmpleado;
     @Column(name = "rol")
-    private Roles rolEmpleado;
+    private Enum_Roles rolEmpleado;
     @Column(name = "empresa")
     private  Empresa empresaEmpleado;
     @Column(name = "transaccion")
@@ -26,7 +26,7 @@ public class Empleado {
     private String updatedAt;
     @Column(name = "fecha_creación")
     private String createdAt;
-    public Empleado(long idEmpleado, String correoEmpleado, Perfil perfilEmpleado, Roles rolEmpleado, Empresa empresaEmpleado, MovimientodeDinero transacciónEmpleado, String updatedAt, String createdAt, String nombreEmpleado) {
+    public Empleado(long idEmpleado, String correoEmpleado, Perfil perfilEmpleado, Enum_Roles rolEmpleado, Empresa empresaEmpleado, MovimientodeDinero transacciónEmpleado, String updatedAt, String createdAt, String nombreEmpleado) {
         this.idEmpleado = idEmpleado;
         this.correoEmpleado = correoEmpleado;
         this.perfilEmpleado = perfilEmpleado;
@@ -65,11 +65,11 @@ public class Empleado {
         this.perfilEmpleado = perfilEmpleado;
     }
 
-    public Roles getRolEmpleado() {
+    public Enum_Roles getRolEmpleado() {
         return rolEmpleado;
     }
 
-    public void setRolEmpleado(Roles rolEmpleado) {
+    public void setRolEmpleado(Enum_Roles rolEmpleado) {
         this.rolEmpleado = rolEmpleado;
     }
 
