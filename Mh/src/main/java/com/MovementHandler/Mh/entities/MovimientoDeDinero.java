@@ -1,15 +1,19 @@
 package com.MovementHandler.Mh.entities;
-public class    MovimientodeDinero {
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+
+@AllArgsConstructor
+
+public class MovimientoDeDinero {
     private double montoMovimiento; 
     private String conceptoMovimiento, usuarioEncargado;
+    private long idMovimientoDeDinero;
 
-    public MovimientodeDinero(double montoMovimiento, String conceptoMovimiento, String usuarioEncargado) {
-        this.montoMovimiento = montoMovimiento;
-        this.conceptoMovimiento = conceptoMovimiento;
-        this.usuarioEncargado = usuarioEncargado;
-    }
+    public MovimientoDeDinero() {
 
-    public MovimientodeDinero() {
     }
 
     public double getMontoMovimiento() {
@@ -27,14 +31,22 @@ public class    MovimientodeDinero {
     public void setConceptoMovimiento(String conceptoMovimiento) {
         this.conceptoMovimiento = conceptoMovimiento;
     }
-    
+
     public String getUsuarioEncargado() {
         return usuarioEncargado;
     }
-    
-    public void setUsuarioEncargado(String usuarioENcargado){
-        this.usuarioEncargado = usuarioENcargado;
+
+    public void setUsuarioEncargado(String usuarioEncargado) {
+        this.usuarioEncargado = usuarioEncargado;
     }
-    
+
+    public long getIdMovimientoDeDinero() {
+        return idMovimientoDeDinero;
+    }
+
+    public void setIdMovimientoDeDinero(long idMovimientoDeDinero) {
+        this.idMovimientoDeDinero = idMovimientoDeDinero;
+    }
+
 
 }
