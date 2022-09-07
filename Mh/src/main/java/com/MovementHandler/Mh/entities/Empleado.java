@@ -44,7 +44,6 @@ public class Empleado {
         this.createdAt = createdAt;
         this.nombreEmpleado = nombreEmpleado;
     }
-
     public Empleado() {
     }
 

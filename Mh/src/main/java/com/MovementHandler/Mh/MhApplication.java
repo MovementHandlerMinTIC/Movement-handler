@@ -9,7 +9,6 @@ public class MhApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MhApplication.class, args);
-
 	}
 
 }
