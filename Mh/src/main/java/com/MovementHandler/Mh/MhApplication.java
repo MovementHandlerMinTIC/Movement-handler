@@ -1,8 +1,6 @@
 package com.MovementHandler.Mh;
 
-import com.MovementHandler.Mh.entities.Empleado;
-import com.MovementHandler.Mh.entities.Empresa;
-import com.MovementHandler.Mh.entities.MovimientodeDinero;
+import com.MovementHandler.Mh.entities.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,6 +9,7 @@ public class MhApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MhApplication.class, args);
+<<<<<<< HEAD
 		System.out.println("\n******EMPLEADO******");
 		Empleado empleado1 = new Empleado("Juan Perez", "juanperez@gmail.com", "Coca Cola", "Operativo");
 		System.out.println("Nombre empleado: "+ empleado1.getNombreEmpleado());
@@ -50,6 +49,8 @@ public class MhApplication {
 		mov1.setConceptoMovimiento("Venta de cuaderno especial");
 		System.out.println("Concepto del movimiento: "+ mov1.getConceptoMovimiento());
 		System.out.println("Encargado del movimiento: "+ mov1.getUsuarioEncargado());
+=======
+>>>>>>> release
 	}
 
 }

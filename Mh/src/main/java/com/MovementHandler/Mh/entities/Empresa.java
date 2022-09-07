@@ -1,15 +1,61 @@
 package com.MovementHandler.Mh.entities;
-public class Empresa {
-    private String nombreEmpresa, direccionEmpresa, telefonoEmpresa, nitEmpresa;
 
-    public Empresa(String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa) {
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.Date;
+
+@Entity
+@Table(name = "Empresas")
+public class Empresa {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_empresa")
+    private long idEmpresa;
+    @Column(name = "nombre_empresa", nullable = false)
+    private String nombreEmpresa;
+    @Column(name = "documento_empresa", nullable = false)
+    private String documentoEmpresa;
+    @Column(name = "telefono_empresa", nullable = false)
+    private String telefonoEmpresa;
+    @Column(name = "direccion_empresa", nullable = false)
+    private String direccionEmpresa;
+    @OneToMany
+    @JoinColumn(name = "id_empleados")
+    @OrderColumn
+    private Empleado[] empleados;
+    @OneToMany
+    @JoinColumn(name = "id_transacciones")
+    @OrderColumn
+    private MovimientodeDinero[] transacciones;
+    @Column(name = "fecha_creacion", nullable = false)
+    private LocalDate createdAt;
+    @Column(name = "fecha_actualizacion")
+    private LocalDate updatedAt;
+
+    public Empresa(long idEmpresa, String nombreEmpresa, String documentoEmpresa, String telefonoEmpresa, String direccionEmpresa, Empleado[] empleados, MovimientodeDinero[] transacciones, LocalDate createdAt, LocalDate updatedAt) {
+        this.idEmpresa = idEmpresa;
         this.nombreEmpresa = nombreEmpresa;
-        this.direccionEmpresa = direccionEmpresa;
+        this.documentoEmpresa = documentoEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
-        this.nitEmpresa = nitEmpresa;
+        this.direccionEmpresa = direccionEmpresa;
+        this.empleados = empleados;
+        this.transacciones = transacciones;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
+
     public Empresa() {
+    }
+
+    public long getIdEmpresa() {
+        return idEmpresa;
+    }
+
+    public void setIdEmpresa(long idEmpresa) {
+        this.idEmpresa = idEmpresa;
     }
 
     public String getNombreEmpresa() {
@@ -20,12 +66,12 @@ public class Empresa {
         this.nombreEmpresa = nombreEmpresa;
     }
 
-    public String getDireccionEmpresa() {
-        return direccionEmpresa;
+    public String getDocumentoEmpresa() {
+        return documentoEmpresa;
     }
 
-    public void setDireccionEmpresa(String direccionEmpresa) {
-        this.direccionEmpresa = direccionEmpresa;
+    public void setDocumentoEmpresa(String documentoEmpresa) {
+        this.documentoEmpresa = documentoEmpresa;
     }
 
     public String getTelefonoEmpresa() {
@@ -36,11 +82,58 @@ public class Empresa {
         this.telefonoEmpresa = telefonoEmpresa;
     }
 
-    public String getNitEmpresa() {
-        return nitEmpresa;
+    public String getDireccionEmpresa() {
+        return direccionEmpresa;
     }
 
-    public void setNitEmpresa(String nitEmpresa) {
-        this.nitEmpresa = nitEmpresa;
+    public void setDireccionEmpresa(String direccionEmpresa) {
+        this.direccionEmpresa = direccionEmpresa;
+    }
+
+    public Empleado[] getEmpleados() {
+        return empleados;
+    }
+
+    public void setUsuarios(Empleado[] empleados) {
+        this.empleados = empleados;
+    }
+
+    public MovimientodeDinero[] getTransacciones() {
+        return transacciones;
+    }
+
+    public void setTransacciones(MovimientodeDinero[] transacciones) {
+        this.transacciones = transacciones;
+    }
+
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDate getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDate updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "idEmpresa=" + idEmpresa +
+                ", nombreEmpresa='" + nombreEmpresa + '\'' +
+                ", documentoEmpresa='" + documentoEmpresa + '\'' +
+                ", telefonoEmpresa='" + telefonoEmpresa + '\'' +
+                ", direccionEmpresa='" + direccionEmpresa + '\'' +
+                ", usuarios=" + Arrays.toString(empleados) +
+                ", transacciones=" + Arrays.toString(transacciones) +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
     }
 }
