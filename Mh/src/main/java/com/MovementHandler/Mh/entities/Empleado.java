@@ -3,36 +3,43 @@ package com.MovementHandler.Mh.entities;
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
-@Table(name="Empleado")
+@Table(name = "Empleados")
 public class Empleado {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_Empleado", nullable = false)
     private long idEmpleado;
-    @Column(name = "nombre")
+    @Column(name = "nombre_empleado", nullable = false)
     private String nombreEmpleado;
-    @Column(name = "correo")
+    @Column(name = "correo_empleado", nullable = false)
     private String correoEmpleado;
-    @Column(name = "perfil")
+    @OneToOne
+    @JoinColumn(name = "id_perfil")
     private Perfil perfilEmpleado;
-    @Column(name = "rol")
+    @Column(name = "rol_empleado", nullable = false)
     private Enum_Roles rolEmpleado;
-    @Column(name = "empresa")
+    @ManyToOne
+    @JoinColumn(name = "id_Empresa")
     private  Empresa empresaEmpleado;
-    @Column(name = "transaccion")
-    private MovimientodeDinero transacciónEmpleado;
+    @OneToMany
+    @JoinColumn(name = "id_tansacciones")
+    @OrderColumn
+    private MovimientodeDinero[] transaccionesEmpleado;
     @Column(name = "fecha_actualizacion")
-    private String updatedAt;
-    @Column(name = "fecha_creación")
-    private String createdAt;
-    public Empleado(long idEmpleado, String correoEmpleado, Perfil perfilEmpleado, Enum_Roles rolEmpleado, Empresa empresaEmpleado, MovimientodeDinero transacciónEmpleado, String updatedAt, String createdAt, String nombreEmpleado) {
+    private LocalDate updatedAt;
+    @Column(name = "fecha_creacion", nullable = false)
+    private LocalDate createdAt;
+    public Empleado(long idEmpleado, String correoEmpleado, Perfil perfilEmpleado, Enum_Roles rolEmpleado, Empresa empresaEmpleado, MovimientodeDinero[] transaccionesEmpleado, LocalDate updatedAt, LocalDate createdAt, String nombreEmpleado) {
         this.idEmpleado = idEmpleado;
         this.correoEmpleado = correoEmpleado;
         this.perfilEmpleado = perfilEmpleado;
         this.rolEmpleado = rolEmpleado;
         this.empresaEmpleado = empresaEmpleado;
-        this.transacciónEmpleado = transacciónEmpleado;
+        this.transaccionesEmpleado = transaccionesEmpleado;
         this.updatedAt = updatedAt;
         this.createdAt = createdAt;
         this.nombreEmpleado = nombreEmpleado;
@@ -81,27 +88,27 @@ public class Empleado {
         this.empresaEmpleado = empresaEmpleado;
     }
 
-    public MovimientodeDinero getTransacciónEmpleado() {
-        return transacciónEmpleado;
+    public MovimientodeDinero[] getTransaccionesEmpleado() {
+        return transaccionesEmpleado;
     }
 
-    public void setTransacciónEmpleado(MovimientodeDinero transacciónEmpleado) {
-        this.transacciónEmpleado = transacciónEmpleado;
+    public void setTransacciónEmpleado(MovimientodeDinero[] transaccionesEmpleadonEmpleado) {
+        this.transaccionesEmpleado = transaccionesEmpleadonEmpleado;
     }
 
-    public String getUpdatedAt() {
+    public LocalDate getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(LocalDate updatedAt) {
         this.updatedAt = updatedAt;
     }
 
-    public String getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -121,7 +128,7 @@ public class Empleado {
                 ", perfilEmpleado=" + perfilEmpleado +
                 ", rolEmpleado=" + rolEmpleado +
                 ", empresaEmpleado=" + empresaEmpleado +
-                ", transacciónEmpleado=" + transacciónEmpleado +
+                ", transacciónEmpleado=" + transaccionesEmpleado +
                 ", updatedAt=" + updatedAt +
                 ", createdAt=" + createdAt +
                 ", nombreEmpleado='" + nombreEmpleado + '\'' +

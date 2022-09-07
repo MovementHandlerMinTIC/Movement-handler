@@ -1,21 +1,37 @@
 package com.MovementHandler.Mh.entities;
 
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
+@Entity
+@Table(name = "movimientos_dinero")
 public class    MovimientodeDinero {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_transaccion")
     private long idTransaccion;
+    @Column(name = "concepto_transaccion", nullable = false)
     private String conceptoTransaccion;
+    @Column(name = "monto_transaccion", nullable = false)
     private float montoTransaccion;
-    private Usuario usuario;
+    @ManyToOne
+    @JoinColumn(name = "id_empleado")
+    private Empleado empleado;
+    @ManyToOne
+    @JoinColumn(name = "id_empresa")
     private Empresa empresa;
-    private String createdAt, updatedAt;
+    @Column(name = "fecha_creacion", nullable = false)
+    private LocalDate createdAt;
+    @Column(name = "fecha_actualizacion")
+    private LocalDate updatedAt;
 
-    public MovimientodeDinero(long idTransaccion, String conceptoTransaccion, float montoTransaccion, Usuario usuario, Empresa empresa, String createdAt, String updatedAt) {
+    public MovimientodeDinero(long idTransaccion, String conceptoTransaccion, float montoTransaccion, Empleado empleado, Empresa empresa, LocalDate createdAt, LocalDate updatedAt) {
         this.idTransaccion = idTransaccion;
         this.conceptoTransaccion = conceptoTransaccion;
         this.montoTransaccion = montoTransaccion;
-        this.usuario = usuario;
+        this.empleado = empleado;
         this.empresa = empresa;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -48,12 +64,12 @@ public class    MovimientodeDinero {
         this.montoTransaccion = montoTransaccion;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
     public Empresa getEmpresa() {
@@ -64,19 +80,19 @@ public class    MovimientodeDinero {
         this.empresa = empresa;
     }
 
-    public String getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
+    public LocalDate getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(LocalDate updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -86,7 +102,7 @@ public class    MovimientodeDinero {
                 "idTransaccion=" + idTransaccion +
                 ", conceptoTransaccion='" + conceptoTransaccion + '\'' +
                 ", montoTransaccion=" + montoTransaccion +
-                ", usuario=" + usuario +
+                ", usuario=" + empleado +
                 ", empresa=" + empresa +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +

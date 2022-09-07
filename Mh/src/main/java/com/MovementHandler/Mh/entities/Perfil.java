@@ -1,19 +1,31 @@
 package com.MovementHandler.Mh.entities;
 
-import java.util.Date;
+import javax.persistence.*;
+import java.time.LocalDate;
 
+@Entity
+@Table(name = "Perfiles")
 public class Perfil {
+    @Id
+    @Column(name = "id_perfil", nullable = false, unique = true)
     private String idProfile;
+    @Column(name = "imagen_perfil")
     private String image;
+    @Column(name = "telefono_perfil", nullable = false)
     private String phone;
-    private Usuario user;
-    private String createdAt, updatedAt;
+    @OneToOne
+    @JoinColumn(name = "id_empleado")
+    private Empleado empleado;
+    @Column(name = "fecha_creacion", nullable = false)
+    private LocalDate createdAt;
+    @Column(name = "fecha_actualizacion")
+    private LocalDate updatedAt;
 
-    public Perfil(String idProfile, String image, String phone, Usuario user, String createdAt, String updatedAt) {
+    public Perfil(String idProfile, String image, String phone, Empleado empleado, LocalDate createdAt, LocalDate updatedAt) {
         this.idProfile = idProfile;
         this.image = image;
         this.phone = phone;
-        this.user = user;
+        this.empleado = empleado;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -46,27 +58,39 @@ public class Perfil {
         this.phone = phone;
     }
 
-    public Usuario getUser() {
-        return user;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setUser(Usuario user) {
-        this.user = user;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
-    public String getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
+    public LocalDate getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(LocalDate updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @Override
+    public String toString() {
+        return "Perfil{" +
+                "idProfile='" + idProfile + '\'' +
+                ", image='" + image + '\'' +
+                ", phone='" + phone + '\'' +
+                ", empleado=" + empleado +
+                ", createdAt='" + createdAt + '\'' +
+                ", updatedAt='" + updatedAt + '\'' +
+                '}';
     }
 }

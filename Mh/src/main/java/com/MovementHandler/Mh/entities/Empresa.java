@@ -1,41 +1,51 @@
 package com.MovementHandler.Mh.entities;
 
+import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Date;
 
+@Entity
+@Table(name = "Empresas")
 public class Empresa {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_empresa")
     private long idEmpresa;
+    @Column(name = "nombre_empresa", nullable = false)
     private String nombreEmpresa;
+    @Column(name = "documento_empresa", nullable = false)
     private String documentoEmpresa;
+    @Column(name = "telefono_empresa", nullable = false)
     private String telefonoEmpresa;
+    @Column(name = "direccion_empresa", nullable = false)
     private String direccionEmpresa;
-    private Usuario[] usuarios;
+    @OneToMany
+    @JoinColumn(name = "id_empleados")
+    @OrderColumn
+    private Empleado[] empleados;
+    @OneToMany
+    @JoinColumn(name = "id_transacciones")
+    @OrderColumn
     private MovimientodeDinero[] transacciones;
-    private String createdAt, updatedAt;
+    @Column(name = "fecha_creacion", nullable = false)
+    private LocalDate createdAt;
+    @Column(name = "fecha_actualizacion")
+    private LocalDate updatedAt;
 
-    public Empresa(long idEmpresa, String nombreEmpresa, String documentoEmpresa, String telefonoEmpresa, String direccionEmpresa, Usuario[] usuarios, MovimientodeDinero[] transacciones, String createdAt, String updatedAt) {
+    public Empresa(long idEmpresa, String nombreEmpresa, String documentoEmpresa, String telefonoEmpresa, String direccionEmpresa, Empleado[] empleados, MovimientodeDinero[] transacciones, LocalDate createdAt, LocalDate updatedAt) {
         this.idEmpresa = idEmpresa;
         this.nombreEmpresa = nombreEmpresa;
         this.documentoEmpresa = documentoEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
         this.direccionEmpresa = direccionEmpresa;
-        this.usuarios = usuarios;
+        this.empleados = empleados;
         this.transacciones = transacciones;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
 
-    public Empresa(long idEmpresa, String nombreEmpresa, String documentoEmpresa, String telefonoEmpresa, String direccionEmpresa, Usuario[] usuarios, String createdAt, String updatedAt) {
-        this.idEmpresa = idEmpresa;
-        this.nombreEmpresa = nombreEmpresa;
-        this.documentoEmpresa = documentoEmpresa;
-        this.telefonoEmpresa = telefonoEmpresa;
-        this.direccionEmpresa = direccionEmpresa;
-        this.usuarios = usuarios;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-    }
 
     public Empresa() {
     }
@@ -80,12 +90,12 @@ public class Empresa {
         this.direccionEmpresa = direccionEmpresa;
     }
 
-    public Usuario[] getUsuarios() {
-        return usuarios;
+    public Empleado[] getEmpleados() {
+        return empleados;
     }
 
-    public void setUsuarios(Usuario[] usuarios) {
-        this.usuarios = usuarios;
+    public void setUsuarios(Empleado[] empleados) {
+        this.empleados = empleados;
     }
 
     public MovimientodeDinero[] getTransacciones() {
@@ -96,19 +106,19 @@ public class Empresa {
         this.transacciones = transacciones;
     }
 
-    public String getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
+    public LocalDate getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(LocalDate updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -120,7 +130,7 @@ public class Empresa {
                 ", documentoEmpresa='" + documentoEmpresa + '\'' +
                 ", telefonoEmpresa='" + telefonoEmpresa + '\'' +
                 ", direccionEmpresa='" + direccionEmpresa + '\'' +
-                ", usuarios=" + Arrays.toString(usuarios) +
+                ", usuarios=" + Arrays.toString(empleados) +
                 ", transacciones=" + Arrays.toString(transacciones) +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
