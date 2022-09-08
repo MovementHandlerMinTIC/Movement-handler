@@ -8,18 +8,6 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "Empleados")
 public class Empleado {
-<<<<<<< HEAD
-    private String nombreEmpleado, correoEmpleado, empresaEmpleado, rolEmpleado;
-    private  long idEmpleado;
-
-    public Empleado(long idEmpleado,String nombreEmpleado, String correoEmpleado, String empresaEmpleado, String rolEmpleado){
-        this.idEmpleado = idEmpleado;
-        this.nombreEmpleado=nombreEmpleado;
-        this.correoEmpleado=correoEmpleado;
-        this.empresaEmpleado=empresaEmpleado;
-        this.rolEmpleado=rolEmpleado;
-
-=======
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -55,29 +43,18 @@ public class Empleado {
         this.updatedAt = updatedAt;
         this.createdAt = createdAt;
         this.nombreEmpleado = nombreEmpleado;
->>>>>>> release
     }
     public Empleado() {
     }
 
     public long getIdEmpleado() {
         return idEmpleado;
-<<<<<<< HEAD
     }
 
     public void setIdEmpleado(long idEmpleado) {
         this.idEmpleado = idEmpleado;
     }
 
-    public String getNombreEmpleado() {
-        return nombreEmpleado;
-=======
->>>>>>> release
-    }
-
-    public void setIdEmpleado(long idEmpleado) {
-        this.idEmpleado = idEmpleado;
-    }
 
     public String getCorreoEmpleado() {
         return correoEmpleado;
