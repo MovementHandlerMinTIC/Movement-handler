@@ -27,7 +27,7 @@ public class MovimientodeDineroService implements IMovimientodeDineroService{
         return movimientosdeDinero;
     }
 
-    @Override
+   @Override
     public List<MovimientodeDinero> findByempresa(Empresa idEmpresa) {
         List<MovimientodeDinero> movimientodeDinero = movimientodeDineroRepository.findByempresa(idEmpresa);
         return movimientodeDinero;

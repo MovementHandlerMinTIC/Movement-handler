@@ -26,9 +26,8 @@ public class MovimientodeDineroController {
         return movimientodeDineroService.findAll();
     }
 
-    @GetMapping("/empresa/{id}/transaccion")
+   @GetMapping("/empresa/{id}/transaccion")
     public List<MovimientodeDinero> findByidEmpresa(@PathVariable long id) {
-
         return movimientodeDineroService.findByempresa(empresaService.findById(id));
     }
     @PostMapping ("/transaccion")
