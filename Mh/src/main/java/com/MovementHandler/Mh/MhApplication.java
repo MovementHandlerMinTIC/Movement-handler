@@ -9,7 +9,7 @@ public class MhApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MhApplication.class, args);
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 		System.out.println("\n******EMPLEADO******");
 		Empleado empleado1 = new Empleado("Juan Perez", "juanperez@gmail.com", "Coca Cola", "Operativo");
 		System.out.println("Nombre empleado: "+ empleado1.getNombreEmpleado());
@@ -50,7 +50,7 @@ public class MhApplication {
 		System.out.println("Concepto del movimiento: "+ mov1.getConceptoMovimiento());
 		System.out.println("Encargado del movimiento: "+ mov1.getUsuarioEncargado());
 =======
->>>>>>> release
+>>>>>>> release */
 	}
 
 }

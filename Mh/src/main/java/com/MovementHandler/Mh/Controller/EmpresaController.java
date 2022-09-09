@@ -26,7 +26,7 @@ public class EmpresaController {
     public Empresa createEmpresa (@RequestBody Empresa empresa){
         return empresaService.createEmpresa(empresa);
     }
-    @PutMapping("/empresa/{id}")
+    @PatchMapping("/empresa/{id}")
     public Empresa updateEmpresa (@PathVariable long id, @RequestBody Empresa empresa){
         return empresaService.updateEmpresa(id, empresa);
     }

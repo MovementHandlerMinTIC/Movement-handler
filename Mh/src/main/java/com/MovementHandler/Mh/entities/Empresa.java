@@ -21,27 +21,17 @@ public class Empresa {
     private String telefonoEmpresa;
     @Column(name = "direccion_empresa", nullable = false)
     private String direccionEmpresa;
-    @OneToMany
-    @JoinColumn(name = "id_empleados")
-    @OrderColumn
-    private Empleado[] empleados;
-    @OneToMany
-    @JoinColumn(name = "id_transacciones")
-    @OrderColumn
-    private MovimientodeDinero[] transacciones;
     @Column(name = "fecha_creacion", nullable = false)
     private LocalDate createdAt;
     @Column(name = "fecha_actualizacion")
     private LocalDate updatedAt;
 
-    public Empresa(long idEmpresa, String nombreEmpresa, String documentoEmpresa, String telefonoEmpresa, String direccionEmpresa, Empleado[] empleados, MovimientodeDinero[] transacciones, LocalDate createdAt, LocalDate updatedAt) {
+    public Empresa(long idEmpresa, String nombreEmpresa, String documentoEmpresa, String telefonoEmpresa, String direccionEmpresa, LocalDate createdAt, LocalDate updatedAt) {
         this.idEmpresa = idEmpresa;
         this.nombreEmpresa = nombreEmpresa;
         this.documentoEmpresa = documentoEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
         this.direccionEmpresa = direccionEmpresa;
-        this.empleados = empleados;
-        this.transacciones = transacciones;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -90,22 +80,6 @@ public class Empresa {
         this.direccionEmpresa = direccionEmpresa;
     }
 
-    public Empleado[] getEmpleados() {
-        return empleados;
-    }
-
-    public void setUsuarios(Empleado[] empleados) {
-        this.empleados = empleados;
-    }
-
-    public MovimientodeDinero[] getTransacciones() {
-        return transacciones;
-    }
-
-    public void setTransacciones(MovimientodeDinero[] transacciones) {
-        this.transacciones = transacciones;
-    }
-
     public LocalDate getCreatedAt() {
         return createdAt;
     }
@@ -130,8 +104,6 @@ public class Empresa {
                 ", documentoEmpresa='" + documentoEmpresa + '\'' +
                 ", telefonoEmpresa='" + telefonoEmpresa + '\'' +
                 ", direccionEmpresa='" + direccionEmpresa + '\'' +
-                ", usuarios=" + Arrays.toString(empleados) +
-                ", transacciones=" + Arrays.toString(transacciones) +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';

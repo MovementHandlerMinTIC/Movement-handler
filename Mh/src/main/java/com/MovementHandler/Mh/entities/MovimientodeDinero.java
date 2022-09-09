@@ -21,8 +21,9 @@ public class    MovimientodeDinero {
     private Empleado empleado;
     @ManyToOne
     @JoinColumn(name = "id_empresa")
-    private Empresa empresa;
-    @Column(name = "fecha_creacion", nullable = false)
+    private  Empresa empresa;
+
+    @Column(name = "fecha_creacion", nullable   = false)
     private LocalDate createdAt;
     @Column(name = "fecha_actualizacion")
     private LocalDate updatedAt;
@@ -72,13 +73,7 @@ public class    MovimientodeDinero {
         this.empleado = empleado;
     }
 
-    public Empresa getEmpresa() {
-        return empresa;
-    }
 
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
 
     public LocalDate getCreatedAt() {
         return createdAt;
@@ -96,13 +91,21 @@ public class    MovimientodeDinero {
         this.updatedAt = updatedAt;
     }
 
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
     @Override
     public String toString() {
         return "MovimientodeDinero{" +
                 "idTransaccion=" + idTransaccion +
                 ", conceptoTransaccion='" + conceptoTransaccion + '\'' +
                 ", montoTransaccion=" + montoTransaccion +
-                ", usuario=" + empleado +
+                ", empleado=" + empleado +
                 ", empresa=" + empresa +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
