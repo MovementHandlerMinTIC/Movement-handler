@@ -9,6 +9,9 @@ public interface IMovimientodeDineroService {
 
     Optional<MovimientodeDinero> findById(long id);
     List<MovimientodeDinero> findAll();
+
+    List<MovimientodeDinero> findByEmpresa(long idEmpresa);
+
     MovimientodeDinero createMovimientodeDinero(MovimientodeDinero movimientodeDinero);
     MovimientodeDinero updateMovimientodeDinero(long id, MovimientodeDinero movimientodeDinero);
     void deleteMovimientodeDinero(long id);

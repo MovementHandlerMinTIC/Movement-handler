@@ -1,10 +1,6 @@
 package com.MovementHandler.Mh.services;
 
-<<<<<<< HEAD
-import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration;
 
-public class EmpresaService extends JpaRepositoriesAutoConfiguration {
-=======
 import com.MovementHandler.Mh.Repository.IEmpresaRepository;
 import com.MovementHandler.Mh.entities.Empresa;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +44,5 @@ public class EmpresaService implements IEmpresaService{
     public void deleteEmpresa(long id) {
         empresaRepository.deleteById(id);
     }
->>>>>>> main
+
 }

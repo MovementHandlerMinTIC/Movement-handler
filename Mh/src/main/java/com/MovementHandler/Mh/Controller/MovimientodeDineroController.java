@@ -15,8 +15,7 @@ public class MovimientodeDineroController {
     @Autowired
     private IMovimientodeDineroService movimientodeDineroService;
 
-    @Autowired
-    private IEmpresaService empresaService;
+
 
     @GetMapping("/transaccion/{id}")
     public Optional<MovimientodeDinero> findById (@PathVariable long id){
@@ -25,6 +24,12 @@ public class MovimientodeDineroController {
     @GetMapping("/transaccion")
     public List<MovimientodeDinero> findAll(){
         return movimientodeDineroService.findAll();
+    }
+
+    @GetMapping("/empresa/{id}/transaccion")
+    public List<MovimientodeDinero> findByEmpresa(@PathVariable long id) {
+
+        return movimientodeDineroService.findByEmpresa(id);
     }
     @PostMapping ("/transaccion")
     public MovimientodeDinero createMovimientodeDinero(@RequestBody MovimientodeDinero movimientodeDinero){
