@@ -1,4 +1,4 @@
-package com.MovementHandler.Mh.Controller;
+package com.MovementHandler.Mh.controller;
 
 import com.MovementHandler.Mh.entities.MovimientodeDinero;
 import com.MovementHandler.Mh.services.IEmpresaService;
@@ -16,8 +16,6 @@ public class MovimientodeDineroController {
     private IMovimientodeDineroService movimientodeDineroService;
     @Autowired
     private IEmpresaService empresaService;
-
-
 
     @GetMapping("/transaccion/{id}")
     public Optional<MovimientodeDinero> findById (@PathVariable long id){

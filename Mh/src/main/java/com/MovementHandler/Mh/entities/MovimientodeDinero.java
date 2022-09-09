@@ -1,11 +1,8 @@
 package com.MovementHandler.Mh.entities;
 
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "movimientos_dinero")
 public class MovimientodeDinero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
