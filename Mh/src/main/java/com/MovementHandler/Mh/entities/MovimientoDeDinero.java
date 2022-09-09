@@ -3,7 +3,6 @@ package com.MovementHandler.Mh.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Table(name = "movimientos_dinero")
@@ -38,8 +37,8 @@ public class MovimientodeDinero {
         this.updatedAt = updatedAt;
     }
 
-
-
+    public MovimientodeDinero() {
+    }
 
     public long getIdTransaccion() {
         return idTransaccion;

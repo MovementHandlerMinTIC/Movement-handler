@@ -14,6 +14,8 @@ import java.util.Optional;
 public class MovimientodeDineroController {
     @Autowired
     private IMovimientodeDineroService movimientodeDineroService;
+    @Autowired
+    private IEmpresaService empresaService;
 
 
 
@@ -27,9 +29,9 @@ public class MovimientodeDineroController {
     }
 
     @GetMapping("/empresa/{id}/transaccion")
-    public List<MovimientodeDinero> findByEmpresa(@PathVariable long id) {
+    public List<MovimientodeDinero> findByidEmpresa(@PathVariable long id) {
 
-        return movimientodeDineroService.findByEmpresa(id);
+        return movimientodeDineroService.findByempresa(empresaService.findById(id));
     }
     @PostMapping ("/transaccion")
     public MovimientodeDinero createMovimientodeDinero(@RequestBody MovimientodeDinero movimientodeDinero){
