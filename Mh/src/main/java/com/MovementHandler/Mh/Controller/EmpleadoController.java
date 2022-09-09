@@ -27,7 +27,7 @@ public class EmpleadoController {
     public Empleado createEmpleado(@RequestBody Empleado empleado){
         return empleadoService.createEmpleado(empleado);
     }
-    @PutMapping("/empleado/{id}")
+    @PatchMapping("/empleado/{id}")
     public Empleado updateEmpleado(@PathVariable long id, @RequestBody Empleado empleado){
         return empleadoService.updateEmpleado(id, empleado);
     }

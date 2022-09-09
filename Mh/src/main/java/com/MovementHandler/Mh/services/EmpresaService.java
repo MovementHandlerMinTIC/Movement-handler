@@ -1,5 +1,6 @@
 package com.MovementHandler.Mh.services;
 
+
 import com.MovementHandler.Mh.Repository.IEmpresaRepository;
 import com.MovementHandler.Mh.entities.Empresa;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +37,12 @@ public class EmpresaService implements IEmpresaService{
     @Override
     public Empresa updateEmpresa(long id, Empresa empresa) {
         Empresa putEmpresa = empresaRepository.save(empresa);
-        return null;
+        return putEmpresa;
     }
 
     @Override
     public void deleteEmpresa(long id) {
         empresaRepository.deleteById(id);
     }
+
 }

@@ -1,6 +1,7 @@
 package com.MovementHandler.Mh.services;
 
 import com.MovementHandler.Mh.Repository.IMovimientodeDineroRepository;
+import com.MovementHandler.Mh.entities.Empresa;
 import com.MovementHandler.Mh.entities.MovimientodeDinero;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,12 @@ public class MovimientodeDineroService implements IMovimientodeDineroService{
     public List<MovimientodeDinero> findAll() {
         List<MovimientodeDinero> movimientosdeDinero = (List<MovimientodeDinero>) movimientodeDineroRepository.findAll();
         return movimientosdeDinero;
+    }
+
+    @Override
+    public List<MovimientodeDinero> findByempresa(Empresa idEmpresa) {
+        List<MovimientodeDinero> movimientodeDinero = movimientodeDineroRepository.findByempresa(idEmpresa);
+        return movimientodeDinero;
     }
 
     @Override

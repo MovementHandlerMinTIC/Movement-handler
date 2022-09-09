@@ -27,7 +27,7 @@ public class PerfilController {
     public Perfil createPerfil(@RequestBody Perfil perfil){
         return perfilService.createPerfil(perfil);
     }
-    @PutMapping("/perfil/{id}")
+    @PatchMapping("/perfil/{id}")
     public Perfil updatePerfil(@PathVariable String id, @RequestBody Perfil perfil){
         return perfilService.updatePerfil(id, perfil);
     }
