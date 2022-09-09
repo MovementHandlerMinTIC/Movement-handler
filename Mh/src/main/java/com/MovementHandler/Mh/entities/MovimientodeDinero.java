@@ -1,4 +1,4 @@
-package com.MovementHandler.Mh.controller;
+package com.MovementHandler.Mh.entities;
 
 
 import com.MovementHandler.Mh.entities.Empleado;
