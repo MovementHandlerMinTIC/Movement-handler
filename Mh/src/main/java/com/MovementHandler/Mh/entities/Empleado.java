@@ -1,7 +1,5 @@
 package com.MovementHandler.Mh.entities;
 
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -38,7 +36,6 @@ public class Empleado {
         this.updatedAt = updatedAt;
         this.createdAt = createdAt;
         this.nombreEmpleado = nombreEmpleado;
-
     }
     public Empleado() {
     }
@@ -50,7 +47,6 @@ public class Empleado {
     public void setIdEmpleado(long idEmpleado) {
         this.idEmpleado = idEmpleado;
     }
-
     public String getNombreEmpleado() {
         return nombreEmpleado;
     }
