@@ -1,4 +1,4 @@
-package com.MovementHandler.Mh.Controller;
+package com.MovementHandler.Mh.controller;
 
 import com.MovementHandler.Mh.entities.Empresa;
 import com.MovementHandler.Mh.services.IEmpresaService;

@@ -17,9 +17,6 @@ public class Empleado {
     private String nombreEmpleado;
     @Column(name = "correo_empleado", nullable = false)
     private String correoEmpleado;
-    @OneToOne
-    @JoinColumn(name = "id_perfil")
-    private Perfil perfilEmpleado;
     @Column(name = "rol_empleado", nullable = false)
     private Enum_Roles rolEmpleado;
     @ManyToOne
@@ -29,10 +26,9 @@ public class Empleado {
     private LocalDate updatedAt;
     @Column(name = "fecha_creacion", nullable = false)
     private LocalDate createdAt;
-    public Empleado(long idEmpleado, String correoEmpleado, Perfil perfilEmpleado, Enum_Roles rolEmpleado, Empresa empresaEmpleado, LocalDate updatedAt, LocalDate createdAt, String nombreEmpleado) {
+    public Empleado(long idEmpleado, String correoEmpleado, Enum_Roles rolEmpleado, Empresa empresaEmpleado, LocalDate updatedAt, LocalDate createdAt, String nombreEmpleado) {
         this.idEmpleado = idEmpleado;
         this.correoEmpleado = correoEmpleado;
-        this.perfilEmpleado = perfilEmpleado;
         this.rolEmpleado = rolEmpleado;
         this.empresaEmpleado = empresaEmpleado;
         this.updatedAt = updatedAt;
@@ -67,13 +63,6 @@ public class Empleado {
         this.correoEmpleado = correoEmpleado;
     }
 
-    public Perfil getPerfilEmpleado() {
-        return perfilEmpleado;
-    }
-
-    public void setPerfilEmpleado(Perfil perfilEmpleado) {
-        this.perfilEmpleado = perfilEmpleado;
-    }
 
     public Enum_Roles getRolEmpleado() {
         return rolEmpleado;
@@ -113,7 +102,6 @@ public class Empleado {
         return "Empleado{" +
                 "idEmpleado=" + idEmpleado +
                 ", correoEmpleado='" + correoEmpleado + '\'' +
-                ", perfilEmpleado=" + perfilEmpleado +
                 ", rolEmpleado=" + rolEmpleado +
                 ", empresaEmpleado=" + empresaEmpleado +
                 ", updatedAt=" + updatedAt +
