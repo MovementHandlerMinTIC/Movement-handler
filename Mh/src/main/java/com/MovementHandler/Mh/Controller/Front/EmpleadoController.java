@@ -24,7 +24,7 @@ public class EmpleadoController {
 
 // EMPLEADOS
 
-    @GetMapping("/verEmpleados")
+    @GetMapping("/VerEmpleados")
     public String viewempleado(Model model, @ModelAttribute("mensaje") String mensaje) {
         List<Empleado> Listaempleados = empleadoService.findAll();
         model.addAttribute("emplelist", Listaempleados);
