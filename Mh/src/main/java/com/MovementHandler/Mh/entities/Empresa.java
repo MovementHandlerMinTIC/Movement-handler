@@ -5,6 +5,11 @@ import java.time.LocalDate;
 import java.util.Arrays;
 
 
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "Empresas")
 public class Empresa {
@@ -25,6 +30,8 @@ public class Empresa {
     private LocalDate createdAt;
     @Column(name = "fecha_actualizacion")
     private LocalDate updatedAt;
+    @OneToMany(mappedBy = "empresaEmpleado")
+    private List<Empleado> empleados;
 
     public Empresa(long idEmpresa, String nombreEmpresa, String documentoEmpresa, String telefonoEmpresa, String direccionEmpresa, LocalDate createdAt, LocalDate updatedAt) {
         this.idEmpresa = idEmpresa;
