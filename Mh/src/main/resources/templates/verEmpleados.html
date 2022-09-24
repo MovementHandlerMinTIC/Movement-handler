@@ -41,7 +41,7 @@
     <td th:text="${empleado.idEmpleado}"></td>
     <td th:text="${empleado.nombreEmpleado}"></td>
     <td th:text="${empleado.correoEmpleado}"></td>
-    <td th:text="${empleado.empresaEmpleado}"></td>
+    <td th:text="${empleado.empresaEmpleado.nombreEmpresa}"></td>
     <td th:text="${empleado.rolEmpleado}"></td>
     <td><button type="button" class="btn btn-warning"><a th:href="@{/EditarEmpleado/{idEmpleado}(idEmpleado=${empleado.idEmpleado})}">Editar</a></button></td>
     <td><button type="button" class="btn btn-danger"><a th:href="@{/EliminarEmpleado/{idEmpleado}(idEmpleado=${empleado.idEmpleado})}">Eliminar</a></button></td>
